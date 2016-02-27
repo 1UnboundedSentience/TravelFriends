@@ -29,6 +29,10 @@ describe "Micropost pages" do
         expect { click_button "Post" }.to change(Micropost, :count).by(1)
       end
     end
+
+    describe "uploading a file on google drive" do
+
+    end
   end
 
   describe "micropost destruction" do

@@ -23,8 +23,13 @@ describe Micropost do
     it { should_not be_valid }
   end
 
-  describe "with content that is too long" do
+#I want to change this project to have unlimited content length
+  describe "content should be unlimited length" do
     before { @micropost.content = "a" * 141 }
-    it { should_not be_valid }
+    it { be_valid }
+  end
+  describe "content under 140 chars is valid as well" do
+    before { @micropost.content = "a" * 41 }
+    it { be_valid }
   end
 end
