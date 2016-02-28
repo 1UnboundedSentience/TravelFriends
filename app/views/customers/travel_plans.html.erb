@@ -23,6 +23,7 @@
         <% else %>
           <p>No travel plans available.</p>
         <% end %>
+        <%= link_to "New Travel Plan", new_travel_plan_path(:customer_id => @customer), class: 'btn btn-primary' %>
 
   </div>
 </div>

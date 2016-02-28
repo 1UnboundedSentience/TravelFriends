@@ -1,0 +1,50 @@
+
+<% provide(:title, "New Travel Plan") %>
+<h1>New Travel Plan</h1>
+
+    <%= form_for @travel_plan, :html => {:class => "form-horizontal"} do |f| %>
+    <%= f.hidden_field :customer_id, class: 'form-control', value:@customer_id %>
+    <%= f.hidden_field :user_id, class: 'form-control', value:@user_id %>
+
+
+    <div class="control-group">
+      <%= f.label :customer, class:'control-label' %>
+      <div class="controls">
+      <% if @customer.sex == 'male' %>
+        <img src="/img/malecostume-128.png" width="32px" />
+      <% else %>
+        <img src="/img/female1-128.png" width="32px" />
+      <% end %>
+      <a href="<%= customer_path(@customer) %>"><%= @customer.first_name %> <%= @customer.last_name %></a></p>
+    </div>
+    </div>
+
+            <div class="control-group">
+              <%= f.label :title, class:'control-label' %>
+              <div class="controls"><%= f.text_field :title, class: 'form-control' %></div>
+            </div>
+
+    <div class="control-group">
+      <%= f.label :description, class:'control-label' %>
+      <div class="controls"><%= f.text_area :description, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :travel_start, class:'control-label' %>
+      <div class="controls"><%= f.text_field :travel_start, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :travel_end, class:'control-label' %>
+      <div class="controls"><%= f.text_field :travel_end, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      <%= f.submit "Save Travel Plan", class: "btn btn-primary" %>
+    </div>
+    </div>
+    <% end %>
+
+</div>
+</div>

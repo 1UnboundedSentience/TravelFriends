@@ -32,7 +32,7 @@
       <%= travel_plan.status %>
     </span>
   <td>
-    <%= link_to "edit", edit_travel_plan_path(travel_plan), class: 'btn' %>
-    <%= link_to "close", travel_plan, method: :delete, class: 'btn btn-danger',
+    <%= link_to "Edit", edit_travel_plan_path(travel_plan), class: 'btn' %>
+    <%= link_to "Resolve", travel_plan, method: :delete, class: 'btn btn-danger',
                                 data: { confirm: "You sure?" } %></td>
 </tr>
