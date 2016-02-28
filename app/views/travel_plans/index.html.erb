@@ -1,0 +1,20 @@
+<% provide(:title, 'All travel plans') %>
+<h1>All travel plans</h1>
+
+
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>Travel Plan</th>
+      <th>Description</th>
+      <th>Dates</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <%= render @travel_plans %>
+    </tbody>
+  </table>
+</div>
+
+<button type="button" class="btn btn-primary">create new</button>

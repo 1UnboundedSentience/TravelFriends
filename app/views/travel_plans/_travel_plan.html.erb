@@ -1,0 +1,13 @@
+<tr>
+  <td><a href="<%= travel_plan_path(travel_plan) %>">
+    <img src="/img/icon-57-128.png" width="48" />
+    <%= travel_plan.title %>
+  </a></td>
+  <td><%= travel_plan.description %></td>
+  <td>From: <%= travel_plan.travel_start %><br />
+    Until: <%= travel_plan.travel_end %></td>
+  <td>
+    <%= link_to "edit", edit_travel_plan_path(travel_plan), class: 'btn' %>
+    <%= link_to "close", travel_plan, method: :delete, class: 'btn btn-danger',
+                                data: { confirm: "You sure?" } %></td>
+</tr>

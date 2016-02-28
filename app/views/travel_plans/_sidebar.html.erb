@@ -1,0 +1,14 @@
+<aside class="span4 sidebar">
+  <section>
+    <h1>
+      <img src="/img/icon-57-128.png" hspace="16" /><br />
+      <%= @travel_plan.title %>
+    </h1>
+    <div class="alert alert-block"><%= @travel_plan.description %></div>
+    <p>From: <%= @travel_plan.travel_start %><br />
+      Until: <%= @travel_plan.travel_end %></p>
+
+    <%= link_to "start", travel_plan_path(@travel_plan), class: 'btn' %>
+    <%= link_to "edit", edit_travel_plan_path(@travel_plan), class: 'btn' %>
+  </section>
+</aside>

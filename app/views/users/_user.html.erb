@@ -1,5 +1,5 @@
 <li>
-  <%= gravatar_for user, size: 52 %>
+  <img src="/img/supportmale-128.png" width="48" />
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

@@ -1,0 +1,47 @@
+<% provide(:title, @travel_plan.title) %>
+<div class="row">
+  <%= render 'sidebar' %>
+  <div class="span8">
+    <%= render 'navbar' %>
+
+<% provide(:title, "Edit TravelPlan") %>
+<h1>Update the TravelPlan</h1>
+
+
+    <%= form_for @travel_plan, :html => {:class => "form-horizontal"} do |f| %>
+
+    <div class="control-group">
+      <%= f.label :title, class:'control-label' %>
+      <div class="controls"><%= f.text_field :title, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, class:'control-label' %>
+      <div class="controls"><%= f.text_area :description, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :destination, class:'control-label' %>
+      <div class="controls"><%= f.text_area :destination, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :travel_start, class:'control-label' %>
+      <div class="controls"><%= f.text_field :travel_start, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :travel_end, class:'control-label' %>
+      <div class="controls"><%= f.text_field :travel_end, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= link_to "cancel", travel_plan_path(@travel_plan) %>
+    </div>
+    </div>
+    <% end %>
+
+</div>
+</div>
