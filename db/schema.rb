@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130315230445) do
+ActiveRecord::Schema.define(version: 20160228002902) do
+
+  create_table "customers", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "mobile_phone"
+    t.string   "email"
+    t.string   "sex"
+    t.text     "bio"
+    t.string   "payment_method"
+    t.string   "country"
+    t.string   "currency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -33,9 +47,25 @@ ActiveRecord::Schema.define(version: 20130315230445) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+  create_table "travel_plans", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "travel_start"
+    t.date     "travel_end"
+    t.string   "destination"
+    t.decimal  "destination_lat", precision: 10, scale: 6
+    t.decimal  "destination_lng", precision: 10, scale: 6
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "customer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "sex"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"

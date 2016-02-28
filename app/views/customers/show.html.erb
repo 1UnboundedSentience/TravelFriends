@@ -1,0 +1,24 @@
+<% provide(:title, @customer.first_name) %>
+<div class="row">
+  <%= render 'sidebar' %>
+  <div class="span8">
+    <% if @customer.travel_plans.any? %>
+      <h3>This Customer has <%= @customer.travel_plans.count %> travel plans</h3>
+        <table class="table table-striped">
+          <thead>
+            <th>Travel Plan</th>
+            <th>Dates</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+            <% @customer.travel_plans.each do |travel_plan| %>
+              <%= render :partial => "customers/travel_plans", :locals => { :travel_plan => travel_plan } %>
+            <% end %>
+          </tbody>
+        </table>
+
+      <% else %>
+        <h3>No travel plans available.</h3>
+      <% end %>
+  </div>
+</div>

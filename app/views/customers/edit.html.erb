@@ -1,0 +1,40 @@
+<div class="row">
+  <%= render 'sidebar' %>
+  <div class="span8">
+
+<% provide(:title, "Edit Customer") %>
+<h1>Update your Customer</h1>
+
+
+    <%= form_for @customer, :html => {:class => "form-horizontal"} do |f| %>
+
+    <div class="control-group">
+      <%= f.label :first_name, class:'control-label' %>
+      <div class="controls"><%= f.text_field :first_name, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :last_name, class:'control-label' %>
+      <div class="controls"><%= f.text_field :last_name, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :bio, class:'control-label' %>
+      <div class="controls"><%= f.text_area :bio, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :country, class:'control-label' %>
+      <div class="controls"><%= f.text_field :country, class: 'form-control' %></div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      <%= f.submit "Save customer", class: "btn btn-primary" %>
+      <%= link_to "cancel", customer_path(@customer) %>
+    </div>
+    </div>
+    <% end %>
+
+</div>
+</div>

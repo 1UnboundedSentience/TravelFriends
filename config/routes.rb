@@ -4,6 +4,13 @@ SampleApp::Application.routes.draw do
       get :following, :followers
     end
   end
+  resources :customers do
+    member do
+      get 'travel_plans'
+    end
+  end
+  resources :customers
+  resources :travel_plans
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts # ,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
