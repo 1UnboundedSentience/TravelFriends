@@ -1,0 +1,33 @@
+<% provide(:title, 'Start to serve') %>
+<div class="centered">
+  <h1>Your Dashboard</h1>
+  <h3>What do you want to do today?</h3>
+<br /><br />
+  <div class="row">
+    <div class="span2 offset3">
+      <a href="<%= customers_path %>">
+    <p><img src="/img/malecostume-128.png" /></p>
+    <p>Customers</p>
+    </a>
+    <a class="btn btn-primary" href="<%= customers_path %>">New Customer</a>
+  </div>
+
+  <div class="row">
+    <div class="span2">
+      <a href="<%= travel_plans_path %>">
+    <p><img src="/img/icon-57-128.png" /></p>
+    <p>Travel Plans</p>
+    </a>
+    <a class="btn btn-primary" href="<%= travel_plans_path %>">New Travel Plan</a>
+  </div>
+
+  <div class="row">
+    <div class="span2">
+      <a href="<%= user_path(current_user) %>">
+    <p><img src="/img/icon-79-128.png" /></p>
+    <p>My Profile</p>
+    <a class="btn btn-primary" href="<%= edit_user_path(current_user) %>">Edit Profile</a>
+    </a>
+  </div>
+
+</div>

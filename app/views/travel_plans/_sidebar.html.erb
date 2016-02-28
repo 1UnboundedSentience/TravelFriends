@@ -1,4 +1,4 @@
-<aside class="span4 sidebar">
+<aside class="span4 sidebar centered">
   <section>
     <h1>
       <img src="/img/icon-57-128.png" hspace="16" /><br />
@@ -7,25 +7,30 @@
     <div class="alert alert-block"><%= @travel_plan.description %></div>
 
     <p>
+      <h4>Your Customer</h4>
       <% if @travel_plan.customer.sex == 'male' %>
         <img src="/img/malecostume-128.png" width="32px" />
       <% else %>
         <img src="/img/female1-128.png" width="32px" />
       <% end %>
-      <a href="<%= customer_path(@travel_plan.customer_id) %>"><%= @travel_plan.user.name %></a></p>
-    <p>
-      <% if @travel_plan.user.sex == 'male' %>
-        <img src="/img/supportmale-128.png" width="32px" />
-      <% else %>
-        <img src="/img/supportfemale-128.png" width="32px" />
-      <% end %>
-      <a href="<%= user_path(@travel_plan.user_id) %>"><%= @travel_plan.customer.first_name %> <%= @travel_plan.customer.last_name %></a></p>
+      <a href="<%= customer_path(@travel_plan.customer_id) %>"><%= @travel_plan.customer.first_name %> <%= @travel_plan.customer.last_name %></a></p>
 
+      <%= link_to "call", travel_plan_path(@travel_plan), class: 'btn btn-warning' %>
+      <%= link_to "edit", edit_travel_plan_path(@travel_plan), class: 'btn' %>
+      <%= link_to "invoice", map_travel_plan_path(@travel_plan), class: 'btn btn-success' %>
+<hr />
+      <h4>Travel Dates </h4>
     <p><span class="label">From</span> <%= @travel_plan.travel_start %></p>
     <p><span class="label">Until</span> <%= @travel_plan.travel_end %></p>
+<hr />
+    <h4>Responsible Agent</h4>
+  <p>
+    <% if @travel_plan.user.sex == 'male' %>
+      <img src="/img/supportmale-128.png" width="32px" />
+    <% else %>
+      <img src="/img/supportfemale-128.png" width="32px" />
+    <% end %>
+    <a href="<%= user_path(@travel_plan.user_id) %>"><%= @travel_plan.user.name %></a></p>
 
-    <%= link_to "map", map_travel_plan_path(@travel_plan), class: 'btn' %>
-    <%= link_to "start", travel_plan_path(@travel_plan), class: 'btn' %>
-    <%= link_to "edit", edit_travel_plan_path(@travel_plan), class: 'btn' %>
   </section>
 </aside>

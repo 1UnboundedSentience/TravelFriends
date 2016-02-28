@@ -11,6 +11,12 @@ SampleApp::Application.routes.draw do
   end
   resources :travel_plans do
     member do
+      get 'fly'
+      get 'drive'
+      get 'sleep'
+      get 'eat'
+      get 'navigate'
+      get 'shop'
       get 'map'
       get 'traffic'
       get 'discover'
@@ -23,6 +29,7 @@ SampleApp::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   root to: 'static_pages#home'
   match '/start',   to: 'static_pages#start',   via: 'get'
+  match '/start2',   to: 'static_pages#start2',   via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'

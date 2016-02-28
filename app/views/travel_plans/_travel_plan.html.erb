@@ -23,8 +23,14 @@
       <%= travel_plan.customer.first_name %> <%= travel_plan.customer.last_name %>
     </a>
   </td>
-  <td>From: <%= travel_plan.travel_start %><br />
-    Until: <%= travel_plan.travel_end %></td>
+  <td>
+      <% if travel_plan.status == 'open' %>
+      <span class="label label-warning">
+        <% else %>
+        <span class="label label-success">
+        <% end %>
+      <%= travel_plan.status %>
+    </span>
   <td>
     <%= link_to "edit", edit_travel_plan_path(travel_plan), class: 'btn' %>
     <%= link_to "close", travel_plan, method: :delete, class: 'btn btn-danger',

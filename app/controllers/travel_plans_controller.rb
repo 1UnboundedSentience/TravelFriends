@@ -7,6 +7,24 @@ class TravelPlansController < ApplicationController
     @travel_plan = TravelPlan.find(params[:id])
   end
 
+  def fly
+    @travel_plan = TravelPlan.find(params[:id])
+  end
+  def drive
+    @travel_plan = TravelPlan.find(params[:id])
+  end
+  def sleep
+    @travel_plan = TravelPlan.find(params[:id])
+  end
+  def eat
+    @travel_plan = TravelPlan.find(params[:id])
+  end
+  def navigate
+    @travel_plan = TravelPlan.find(params[:id])
+  end
+  def shop
+    @travel_plan = TravelPlan.find(params[:id])
+  end
   def map
     @travel_plan = TravelPlan.find(params[:id])
   end

@@ -14,7 +14,7 @@
     <p><span class="label">Payment</span> <%= @customer.payment_method %></p>
     <p><span class="label">Currency</span> <%= @customer.currency %></p>
 
-    <%= link_to "plans", customer_path(@customer) %>
-    <%= link_to "edit", edit_customer_path(@customer), class: 'btn' %>
+    <%= link_to "Travel Plans", customer_path(@customer), class: 'btn btn-warning' %>
+    <%= link_to "Edit Customer", edit_customer_path(@customer), class: 'btn' %>
   </section>
 </aside>

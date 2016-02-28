@@ -1,12 +1,20 @@
-<li>
-  <% if user.sex == 'male' %>
-    <img src="/img/supportmale-128.png" width="48" />
-  <% else %>
-    <img src="/img/supportfemale-128.png" width="48" />
-  <% end %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-</li>
+<tr>
+  <td><a href="<%= user_path(user) %>">
+    <% if user.sex == 'male' %>
+      <img src="/img/supportmale-128.png" width="48" />
+    <% else %>
+      <img src="/img/supportfemale-128.png" width="48" />
+    <% end %>
+    <%= user.name %>
+  </a></td>
+  <td>
+    <%= user.created_at %>
+  </td>
+  <td>
+    <%= link_to "profile", user_path(user), class: 'btn' %>
+    <% if current_user.admin? && !current_user?(user) %>
+      | <%= link_to "delete", user, method: :delete, class: 'btn btn-danger',
+                                    data: { confirm: "You sure?" } %>
+    <% end %>
+  </td>
+</tr>

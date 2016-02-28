@@ -27,10 +27,34 @@
       <%= f.label :country, class:'control-label' %>
       <div class="controls"><%= f.text_field :country, class: 'form-control' %></div>
     </div>
+    <div class="control-group">
+      <%= f.label :currency, class:'control-label' %>
+      <div class="controls">
+        <%= f.radio_button :currency, '$ - Dollar', class: 'form-control' %> <span class="label">$ - Dollar</span>
+        <%= f.radio_button :currency, '€ - Euro', class: 'form-control' %> <span class="label">€ - Euro</span>
+        <%= f.radio_button :currency, '£ - Pound', class: 'form-control' %> <span class="label">£ - Pound</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :payment_method, class:'control-label' %>
+      <div class="controls">
+        <%= f.radio_button :payment_method, 'Cash', class: 'form-control' %> <span class="label">Cash</span>
+        <%= f.radio_button :payment_method, 'Credit Card', class: 'form-control' %> <span class="label">Credit Card</span>
+        <%= f.radio_button :payment_method, 'Debit Card', class: 'form-control' %> <span class="label">Debit Card</span>
+        <%= f.radio_button :payment_method, 'Invoice', class: 'form-control' %> <span class="label">Invoice</span>
+      </div>
+    </div>
+
+      <div class="control-group">
+        <%= f.label :sex, class:'control-label' %>
+        <div class="controls">
+          <%= f.radio_button :sex, 'male', class: 'form-control' %> <span class="label">male</span>
+          <%= f.radio_button :sex, 'female', class: 'form-control' %> <span class="label">female</span></div>
+      </div>
 
     <div class="control-group">
       <div class="controls">
-      <%= f.submit "Save customer", class: "btn btn-primary" %>
+      <%= f.submit "Update customer", class: "btn btn-primary" %>
       <%= link_to "cancel", customer_path(@customer) %>
     </div>
     </div>

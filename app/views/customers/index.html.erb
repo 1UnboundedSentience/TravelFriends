@@ -7,6 +7,8 @@
   <table class="table table-striped">
     <thead>
       <th>Name</th>
+      <th>First Contact</th>
+      <th>Last Contact</th>
       <th>Actions</th>
     </thead>
     <tbody>
@@ -15,4 +17,4 @@
   </table>
 </div>
 
-<button type="button" class="btn btn-primary">create new</button>
+<%= link_to "New Customer", new_customer_path(), class: 'btn btn-primary' %>

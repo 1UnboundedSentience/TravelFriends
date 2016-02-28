@@ -8,6 +8,13 @@
     <%= customer.first_name %> <%= customer.last_name %>
   </a></td>
   <td>
+    <%= customer.created_at %>
+  </td>
+  <td>
+    <%= customer.updated_at %>
+  </td>
+  <td>
+    <%= link_to "profile", customer_path(customer), class: 'btn' %>
     <%= link_to "edit", edit_customer_path(customer), class: 'btn' %>
   </td>
 </tr>

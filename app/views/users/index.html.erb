@@ -1,10 +1,15 @@
 <% provide(:title, 'All users') %>
-<h1>All agents</h1>
+<div class="container">
+<h1>All registered Guides</h1>
 
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
-
-<%= will_paginate %>
+<table class="table table-striped">
+  <thead>
+    <th>Travel Guide</th>
+    <th>Registration</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+</div>
