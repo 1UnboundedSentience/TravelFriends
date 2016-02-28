@@ -20,7 +20,14 @@
 
 var jsexists = "it does";
 $( document ).ready(function() {
-  var jqueryexists = "it does";
+  var populate = ['2016-03-28T16:30','2016-03-31T16:30','SFO','LAX']
+          $('#carSearch input:text').each(
+            function(index){
+                // $(this).blur(
+                    // function(){
+                        $(this).val(populate[index]);
+                    // });
+            });
   $('#carSearch').submit(function(e){
     e.preventDefault();
     $.ajax({
