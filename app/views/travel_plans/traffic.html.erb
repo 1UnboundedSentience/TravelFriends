@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
 <script src="https://js.arcgis.com/3.15/"></script>
 
+
+
 <script>
   require(["esri/map", "dojo/domReady!"], function(Map) {
     // code to create the map and add a basemap will go here
@@ -20,6 +22,28 @@
   <%= render 'sidebar' %>
   <div class="span8">
     <%= render 'navbar' %>
+    <h1>Find Rental Cars on Expedia:</h1>
+    <h2>Enter date format as "2016-03-28T16:30", "2016-03-29T16:30".Enter locations of airports as "SFO", "LAX", etc.  </h2>
+      <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(:session, url: sessions_path, :html => {
+                            :id => 'carSearch'} ) do |f| %>
+          <%= f.label :pickupdate, 'Pick Up Date' %>
+          <%= f.text_field :pickupdate%>
+          <%= f.label :dropoffdate, 'Drop Off Date'  %>
+          <%= f.text_field :dropoffdate %>
+          <%= f.label :pickuplocation, 'Pick Up Location'  %>
+          <%= f.text_field :pickuplocation %>
+          <%= f.label :dropofflocation, 'Drop Off Location'  %>
+          <%= f.text_field :dropofflocation %>
+
+          <%= f.submit "Find Expedia Rental Deals", class: "btn btn-large btn-primary", :html => {
+                            :id => 'carSearchSubmit'} %>
+        <% end %>
+
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+    </div>
 
     <div class="centered"><br />
       <img src="/action/drive.png" />

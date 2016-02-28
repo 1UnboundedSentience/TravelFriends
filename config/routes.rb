@@ -20,6 +20,7 @@ SampleApp::Application.routes.draw do
       get 'map'
       get 'traffic'
       get 'discover'
+      get 'expediacars'
     end
   end
   resources :customers

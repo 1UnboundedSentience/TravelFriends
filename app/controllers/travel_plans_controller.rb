@@ -35,6 +35,10 @@ class TravelPlansController < ApplicationController
     @travel_plan = TravelPlan.find(params[:id])
   end
 
+  def expedia_cars
+    response = HTTParty.get("http://terminal2.expedia.com/x/cars/search?pickupdate="+ params[:pickupdate] + "&dropoffdate=" + params[:dropoffdate] + "&pickuplocation="+ params[:pickuplocation]+"&dropofflocation="+params[:dropofflocation]+"&sort=price&limit=10&a&apikey=zArxH6LB1NhEGBOiGtI4gsmCKBAMhd7C")
+  end
+
   def edit
     @travel_plan = TravelPlan.find(params[:id])
   end

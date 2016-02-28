@@ -18,28 +18,47 @@
 
 //@import 'bower_ringcentral'
 
-jason = "here"
-var outside = "hi";
-
-document.addEventListener('DOMContentLoaded', function() {
-  var outside = "hi2";
-
+var jsexists = "it does";
+$( document ).ready(function() {
+  var jqueryexists = "it does";
+  $('#carSearch').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+       url: "http://terminal2.expedia.com/x/cars/search?pickupdate=" + $('#session_pickupdate').val() + "&dropoffdate="+ $('#session_dropoffdate').val() + "&pickuplocation="+$('#session_pickuplocation').val() + "&dropofflocation=" + $('#session_dropofflocation').val() + "&sort=price&limit=10&a&apikey=zArxH6LB1NhEGBOiGtI4gsmCKBAMhd7C",
+       xhrFields: {
+          withCredentials: "expedia.com"
+       } //
+      })
+      .done(function(response){
+        console.log(response);
+        //clear the div
+        $('#carSearch').empty();
+        for(var i=0; i<response['CarInfoList']['CarInfo'].length; i++) {
+            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarClass']+ "  ")
+            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarMakeModel']+ "  ")
+            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CDetailsUrl']+ "<br>")
+        }
+        $('#carSearch').append(response);
+      })
+    }) //click event
 })
+// var getExpediaInfo = function() {
+//     var xhr = new XMLHttpRequest();
+//     //subdomain = "";
 
-var getAllTransactions = function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://api.ean.com", true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Accept', 'application/json');
-      xhr.onloadend = function() {
-          var parsed = JSON.parse(this.response);
-          var userTransac = parsed['transactions'];
-          //showTable(getColumns(userTransac), getData(userTransac));
-
-
-          var columns = [];
-          var datarows = [];
-          var fixedColumns = [];
-          var fixedData = [];
-      }
-    }
+//     sort = "price";
+//     limit = "10";
+//     apikey = "zArxH6LB1NhEGBOiGtI4gsmCKBAMhd7C";
+//     var8 = "";
+//     var9 = "";
+//     var10 = "";
+// // " + varName +"
+//     fullDomain = "http://terminal2.expedia.com/x/cars/search?pickupdate=" + pickupdate + " 2016-03-21T10:00&dropoffdate=2016-03-28T16:30&pickuplocation=LAX&dropofflocation=LAX&sort=price&limit=10&a&apikey=zArxH6LB1NhEGBOiGtI4gsmCKBAMhd7C"
+//     xhr.open("GET", fullDomain, true);
+//     xhr.setRequestHeader('Content-Type', 'application/json');
+//     xhr.setRequestHeader('Accept', 'application/json');
+//       xhr.onloadend = function() {
+//           var parsed = JSON.parse(this.response);
+//           var userTransac = parsed['transactions'];
+//       }
+//     }
