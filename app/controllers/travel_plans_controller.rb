@@ -11,6 +11,10 @@ class TravelPlansController < ApplicationController
     @travel_plan = TravelPlan.find(params[:id])
   end
 
+  def find_by_customer_id
+    @travel_plan = TravelPlan.find_by_customer_id(@customer.id)
+  end
+
   def update
     @travel_plan = TravelPlan.find(params[:id])
     if @travel_plan.update_attributes(travel_plan_params)

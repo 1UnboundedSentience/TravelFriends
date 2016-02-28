@@ -1,0 +1,9 @@
+<tr>
+  <td><a href="<%= customer_path(travel_plan) %>">
+    <img src="/img/malecostume-128.png" width="48" />
+    <%= customer.first_name %> <%= customer.last_name %>
+  </a></td>
+  <td>
+    <%= link_to "edit", edit_customer_path(customer), class: 'btn' %>
+  </td>
+</tr>
