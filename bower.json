@@ -1,0 +1,21 @@
+{
+  "name": "tf",
+  "homepage": "https://github.com/1UnboundedSentience/TravelFriends",
+  "authors": [
+    "1UnboundedSentience <jsnx21@gmail.com>"
+  ],
+  "description": "app",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ringcentral-web-phone": "^0.2.0"
+  }
+}

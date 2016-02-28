@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* { font-family: helvetica; }
 
 .action-bar {  }
 .action-bar li {  }
@@ -10,3 +11,32 @@
 .action-bar span { display:block; }
 
 .sidebar h1 { text-align: center; margin-bottom: 20px; }
+
+.container.start { width: 100%; margin-top: -20px; }
+.centered { text-align: center; }
+
+.bg { opacity: 0.2; position: absolute; top:0; left:0; min-width:100%; min-height: 100%; z-index:1; display: none;}
+.page { clear: both; position: relative; overflow: hidden; }
+.inner-page { position: relative; margin:0 auto; z-index:2; }
+
+.page .sketch { margin:25px 0; }
+.page { min-height: 600px; padding:50px; }
+.page .btn { display: block; margin:15px; padding:15px; border-radius: 10px; border:0; text-shadow: none; }
+.page .btn .btn { border-radius: 25px; text-transform: uppercase; }
+.page .btn img { margin:20px auto; display:block; }
+
+.page .private .btn { background: #d85; color: #963; }
+.page .private .btn .btn { background: #963; color: white; }
+.page.private { background: #d85; color: white; }
+
+.page .agent .btn { background: #ac6; color: #693; }
+.page .agent .btn .btn { background: #693; color: white; }
+.page.agent { background: #ac6; color: white; }
+
+.page .business .btn { background: #7ab; color:#369; }
+.page .business .btn .btn { background: #369; color: white; }
+.page.business { background: #7ab; color: white; }
+
+.page .btn.buy { background: #925973; color: white; border:2px solid #666; font-size: 15px; height:auto; padding:15px; margin:50px 40%; text-transform: uppercase; }
+
+.footer { clear:both; }
