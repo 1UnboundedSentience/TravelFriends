@@ -5,11 +5,10 @@
       <%= link_to "Travelfriends", root_path, id: "logo", style: 'margin:3px 10px' %>
     <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
-          <li><%= link_to "Travel Plans", travel_plans_path %></li>
-          <li><%= link_to "Customers", customers_path %></li>
+          <li><%= link_to "Start", start_path %></li>
           <% if signed_in? %>
+            <li><%= link_to "Travel Plans", travel_plans_path %></li>
+            <li><%= link_to "Customers", customers_path %></li>
             <li><%= link_to "Agents", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
