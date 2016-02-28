@@ -1,16 +1,18 @@
-<% provide(:title, 'All travel plans') %>
-<h1>All travel plans</h1>
+<% provide(:title, 'All customers') %>
+<h1>All customers</h1>
 
+
+
+<div class="container">
   <table class="table table-striped">
     <thead>
-      <th>Travel Plan</th>
-      <th>Agent</th>
-      <th>Dates</th>
+      <th>Name</th>
       <th>Actions</th>
     </thead>
     <tbody>
-      <%= render @travel_plans %>
+      <%= render @customers %>
     </tbody>
   </table>
+</div>
 
 <button type="button" class="btn btn-primary">create new</button>

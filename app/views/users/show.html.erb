@@ -3,7 +3,11 @@
   <aside class="span4">
     <section>
       <h1>
-        <img src="/img/supportmale-128.png" hspace="16" />
+        <% if @user.sex == 'male' %>
+          <img src="/img/supportmale-128.png" hspace="16" />
+        <% else %>
+          <img src="/img/supportfemale-128.png" hspace="16" />
+        <% end %>
         <%= @user.name %>
       </h1>
     </section>

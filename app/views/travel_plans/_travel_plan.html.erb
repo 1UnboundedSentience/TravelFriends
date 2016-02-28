@@ -3,7 +3,26 @@
     <img src="/img/icon-57-128.png" width="48" />
     <%= travel_plan.title %>
   </a></td>
-  <td><%= travel_plan.description %></td>
+  <td>
+    <a href="<%= user_path(travel_plan.user_id) %>">
+      <% if travel_plan.user.sex == 'male' %>
+        <img src="/img/supportmale-128.png" width="48" />
+      <% else %>
+        <img src="/img/supportfemale-128.png" width="48" />
+      <% end %>
+      <%= travel_plan.user.name %>
+    </a>
+  </td>
+  <td>
+    <a href="<%= customer_path(travel_plan.customer_id) %>">
+      <% if travel_plan.customer.sex == 'male' %>
+        <img src="/img/malecostume-128.png" width="48" />
+      <% else %>
+        <img src="/img/female1-128.png" width="48" />
+      <% end %>
+      <%= travel_plan.customer.first_name %> <%= travel_plan.customer.last_name %>
+    </a>
+  </td>
   <td>From: <%= travel_plan.travel_start %><br />
     Until: <%= travel_plan.travel_end %></td>
   <td>

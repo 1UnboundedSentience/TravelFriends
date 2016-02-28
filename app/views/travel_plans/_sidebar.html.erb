@@ -5,8 +5,14 @@
       <%= @travel_plan.title %>
     </h1>
     <div class="alert alert-block"><%= @travel_plan.description %></div>
-    <p>From: <%= @travel_plan.travel_start %><br />
-      Until: <%= @travel_plan.travel_end %></p>
+
+    <p><span class="label">Agent</span>
+      <a href="<%= customer_path(@travel_plan.customer_id) %>"><%= @travel_plan.user.name %></a></p>
+    <p><span class="label">Customer</span>
+      <a href="<%= user_path(@travel_plan.user_id) %>"><%= @travel_plan.customer.first_name %> <%= @travel_plan.customer.last_name %></a></p>
+
+    <p><span class="label">From</span> <%= @travel_plan.travel_start %></p>
+    <p><span class="label">Until</span> <%= @travel_plan.travel_end %></p>
 
     <%= link_to "start", travel_plan_path(@travel_plan), class: 'btn' %>
     <%= link_to "edit", edit_travel_plan_path(@travel_plan), class: 'btn' %>

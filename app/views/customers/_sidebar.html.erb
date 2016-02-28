@@ -1,0 +1,20 @@
+<aside class="span4 sidebar">
+  <section>
+    <h1>
+      <% if @customer.sex == 'male' %>
+        <img src="/img/malecostume-128.png" hspace="16" />
+      <% else %>
+        <img src="/img/female1-128.png" hspace="16" />
+      <% end %>
+      <br />
+      <%= @customer.first_name %> <%= @customer.last_name %>
+    </h1>
+    <div class="alert alert-block"><%= @customer.bio %></div>
+    <p><span class="label">Country</span> <%= @customer.country %></p>
+    <p><span class="label">Payment</span> <%= @customer.payment_method %></p>
+    <p><span class="label">Currency</span> <%= @customer.currency %></p>
+
+    <%= link_to "plans", travel_plans_customer_path(@customer), class: 'btn' %>
+    <%= link_to "edit", edit_customer_path(@customer), class: 'btn' %>
+  </section>
+</aside>

@@ -1,0 +1,13 @@
+<tr>
+  <td><a href="<%= customer_path(customer) %>">
+    <% if customer.sex == 'male' %>
+      <img src="/img/malecostume-128.png" width="48" />
+    <% else %>
+      <img src="/img/female1-128.png" width="48" />
+    <% end %>
+    <%= customer.first_name %> <%= customer.last_name %>
+  </a></td>
+  <td>
+    <%= link_to "edit", edit_customer_path(customer), class: 'btn' %>
+  </td>
+</tr>
