@@ -9,6 +9,13 @@ SampleApp::Application.routes.draw do
       get 'travel_plans'
     end
   end
+  resources :travel_plans do
+    member do
+      get 'map'
+      get 'traffic'
+      get 'discover'
+    end
+  end
   resources :customers
   resources :travel_plans
   resources :sessions,      only: [:new, :create, :destroy]
