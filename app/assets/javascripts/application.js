@@ -16,4 +16,30 @@
 //= require bootstrap
 //= require_tree .
 
-@import 'bower_ringcentral'
+//@import 'bower_ringcentral'
+
+jason = "here"
+var outside = "hi";
+
+document.addEventListener('DOMContentLoaded', function() {
+  var outside = "hi2";
+
+})
+
+var getAllTransactions = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://api.ean.com", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
+      xhr.onloadend = function() {
+          var parsed = JSON.parse(this.response);
+          var userTransac = parsed['transactions'];
+          //showTable(getColumns(userTransac), getData(userTransac));
+
+
+          var columns = [];
+          var datarows = [];
+          var fixedColumns = [];
+          var fixedData = [];
+      }
+    }
