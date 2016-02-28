@@ -36,7 +36,8 @@ $( document ).ready(function() {
         for(var i=0; i<response['CarInfoList']['CarInfo'].length; i++) {
             $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarClass']+ "  ")
             $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarMakeModel']+ "  ")
-            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CDetailsUrl']+ "<br>")
+            data = "<a href=" + response['CarInfoList']['CarInfo'][i]['DetailsUrl'] + ">More Info</a><br>"
+            $('#carSearch').append(data)
         }
         $('#carSearch').append(response);
       })
