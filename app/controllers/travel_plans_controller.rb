@@ -43,6 +43,34 @@ class TravelPlansController < ApplicationController
     @travel_plan = TravelPlan.find_by_customer_id(@customer.id)
   end
 
+
+    def new
+      if params[:customer_id].present?
+        @customer_id = params[:customer_id]
+      else
+        @customer_id = 1
+      end
+      if params[:user_id].present?
+        @user_id = params[:user_id]
+      else
+        @user_id = current_user[:id]
+      end
+      @customer = Customer.find(@customer_id)
+      @user = User.find(@user_id)
+      @travel_plan = TravelPlan.new()
+    end
+
+    def create
+      @travel_plan = TravelPlan.new(travel_plan_params)
+      if @travel_plan.save
+        flash[:success] = "Travel Plan created!"
+        redirect_to @travel_plan
+      else
+        redirect_to back
+      end
+    end
+
+
   def update
     @travel_plan = TravelPlan.find(params[:id])
     if @travel_plan.update_attributes(travel_plan_params)
@@ -57,6 +85,6 @@ class TravelPlansController < ApplicationController
   private
 
     def travel_plan_params
-      params.require(:travel_plan).permit(:title, :description, :destination, :travel_start, :travel_end)
+      params.require(:travel_plan).permit(:title, :description, :destination, :travel_start, :travel_end, :customer_id, :user_id)
     end
 end

@@ -6,6 +6,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    render 'travel_plans'
   end
 
   def edit
