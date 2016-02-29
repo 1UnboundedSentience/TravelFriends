@@ -40,13 +40,17 @@ $( document ).ready(function() {
         console.log(response);
         //clear the div
         $('#carSearch').empty();
+        $('#records_table').attr("border", "1");
         for(var i=0; i<response['CarInfoList']['CarInfo'].length; i++) {
-            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarClass']+ "  ")
-            $('#carSearch').append(response['CarInfoList']['CarInfo'][i]['CarMakeModel']+ "  ")
-            data = "<a href=" + response['CarInfoList']['CarInfo'][i]['DetailsUrl'] + ">More Info</a><br>"
-            $('#carSearch').append(data)
+            $('#records_table').append("<tr><td>"
+              + response['CarInfoList']['CarInfo'][i]['CarClass'] +
+              "</td><td>" + response['CarInfoList']['CarInfo'][i]['CarMakeModel']
+              + "</td><td><a href=" + response['CarInfoList']['CarInfo'][i]['DetailsUrl']
+              + ">More Info</a></td></tr>"
+            );
+            // $('#records_table').append(data)
         }
-        $('#carSearch').append(response);
+        //$('#carSearch').append(response);
       })
     }) //click event
 })

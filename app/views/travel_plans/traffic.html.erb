@@ -26,6 +26,7 @@
     <h2>Enter date format as "2016-03-28T16:30", "2016-03-29T16:30".Enter locations of airports as "SFO", "LAX", etc.  </h2>
       <div class="row">
       <div class="span6 offset3">
+
         <%= form_for(:session, url: sessions_path, :html => {
                             :id => 'carSearch'} ) do |f| %>
           <%= f.label :pickupdate, 'Pick Up Date' %>
@@ -40,7 +41,15 @@
           <%= f.submit "Find Expedia Rental Deals", class: "btn btn-large btn-primary", :html => {
                             :id => 'carSearchSubmit'} %>
         <% end %>
-
+                <div id="carSearchTable">
+          <table id="records_table" border='0'>
+              <tr>
+                  <th>Car Class</th>
+                  <th>Car Make</th>
+                  <th>Expedia Link</th>
+              </tr>
+          </table>
+        </div>
         <p>New user? <%= link_to "Sign up now!", signup_path %></p>
       </div>
     </div>
